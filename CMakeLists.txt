@@ -183,7 +183,7 @@ if(NOT USE_STD_MALLOC)
   
 endif()
 
-# Win32 delifered packages
+# Win32 delivered packages
 if(WIN32)
   set(MYSQL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/dep/include/mysql)
   set(MYSQL_LIBRARY ${CMAKE_SOURCE_DIR}/dep/lib/${DEP_ARCH}_release/libmySQL.lib)
@@ -191,6 +191,10 @@ if(WIN32)
   set(OPENSSL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/dep/include/openssl)
   set(OPENSSL_LIBRARIES ${CMAKE_SOURCE_DIR}/dep/lib/${DEP_ARCH}_release/libeay32.lib)
   set(OPENSSL_DEBUG_LIBRARIES ${CMAKE_SOURCE_DIR}/dep/lib/${DEP_ARCH}_debug/libeay32.lib)
+  set(ZLIB_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/dep/zlib)
+  set(ZLIB_LIBRARIES z)
+  set(BZIP2_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/dep/src/bzip2)
+  set(BZIP2_LIBRARIES bzip2)
   # zlib is build
 endif()
 
@@ -199,6 +203,9 @@ if(UNIX)
   find_package(MySQL REQUIRED)
   find_package(OpenSSL REQUIRED)
   find_package(ZLIB REQUIRED)
+  if(USE_EXTRACTORS)
+    find_package(BZip2 REQUIRED)
+  endif()
 endif()
 
 # Add uninstall script and target

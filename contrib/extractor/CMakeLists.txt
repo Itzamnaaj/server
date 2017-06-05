@@ -17,8 +17,8 @@
 cmake_minimum_required (VERSION 2.6)
 project (MANGOS_MAP_EXTRACTOR)
 
-include_directories (../../dep)
+include_directories(${CMAKE_SOURCE_DIR}/dep)
 
-add_executable (ad dbcfile.cpp System.cpp)
+add_executable(ad dbcfile.cpp System.cpp)
 
-target_link_libraries (ad loadlib)
+target_link_libraries(ad loadlib ${BZIP2_LIBRARIES} ${ZLIB_LIBRARIES})

@@ -14,7 +14,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-add_library (libmpq mpq_libmpq.cpp libmpq/common.cpp libmpq/explode.cpp libmpq/extract.cpp libmpq/huffman.cpp libmpq/mpq.cpp libmpq/parser.cpp libmpq/wave.cpp )
+add_library(libmpq mpq_libmpq.cpp libmpq/common.cpp libmpq/explode.cpp libmpq/extract.cpp libmpq/huffman.cpp libmpq/mpq.cpp libmpq/parser.cpp libmpq/wave.cpp)
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
@@ -23,7 +23,5 @@ include_directories(
 )
 
 if(WIN32)
-  target_link_libraries(libmpq loadlib
-    zlib
-  )
+  target_link_libraries(libmpq loadlib ${ZLIB_LIBRARIES})
 endif()

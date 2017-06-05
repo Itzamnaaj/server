@@ -66,12 +66,8 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/dep/include/zlib
 )
 
-add_library(g3dlite STATIC
-  ${g3dlite_SRCS}
-)
+add_library(g3dlite STATIC ${g3dlite_SRCS})
 
 if(WIN32)
-  target_link_libraries(g3dlite
-    zlib
-  )
+  target_link_libraries(g3dlite ${ZLIB_LIBRARIES})
 endif()

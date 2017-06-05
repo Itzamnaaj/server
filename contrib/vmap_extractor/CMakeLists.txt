@@ -17,7 +17,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (MANGOS_VMAP_EXTRACT_IO)
 
-include_directories (../../dep)
+include_directories (${CMAKE_SOURCE_DIR}/dep)
 
 if(!WIN32)
 # uncomment next line to disable debug mode
