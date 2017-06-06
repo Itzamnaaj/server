@@ -16,24 +16,20 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 set(zlib_SRCS
-  adler32.c
-  compress.c
-  crc32.c
-  deflate.c
-  example.c
-  infback.c
-  inffast.c
-  inflate.c
-  inftrees.c
-  trees.c
-  uncompr.c
-  zutil.c
+    adler32.c
+    compress.c
+    crc32.c
+    deflate.c
+    example.c
+    infback.c
+    inffast.c
+    inflate.c
+    inftrees.c
+    trees.c
+    uncompr.c
+    zutil.c
 )
 
-include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}
-)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-add_library(zlib STATIC
-  ${zlib_SRCS}
-)
+add_library(z STATIC ${zlib_SRCS})

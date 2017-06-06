@@ -17,3 +17,9 @@
 
 add_subdirectory(src)
 add_subdirectory(recastnavigation)
+
+if(WIN32)
+    add_subdirectory(zlib)
+    set_target_properties(${ZLIB_LIBRARIES} PROPERTIES PROJECT_LABEL "zlib")
+    set_target_properties(${ZLIB_LIBRARIES} PROPERTIES FOLDER "Dependencies")
+endif()
